@@ -24,7 +24,7 @@ use piston::window::WindowSettings;
 use piston::event_loop::*;
 use piston::input::*;
 use glutin_window::GlutinWindow as Window;
-use opengl_graphics::{GlGraphics, OpenGL};
+use opengl_graphics::{ GlGraphics, OpenGL };
 
 use consts::*;
 use components::input::InputType;
@@ -148,7 +148,7 @@ fn main() {
     let mut gl = GlGraphics::new(opengl);
     let mut app = App::new(Dimensions { width: size[0] as f64, height: size[1] as f64 });
 
-    let mut events = window.events();
+    let mut events = Events::new(EventSettings::new());
     while let Some(event) = events.next(&mut window) {
         // TODO: When losing focus, pause the game
 
